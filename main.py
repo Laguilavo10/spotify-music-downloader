@@ -1,9 +1,12 @@
 from utils.get_year_from_date import get_year_from_date
 from utils.list_artists import list_artists
-from getMetadata import get_tracks_data
+from get_tracks import get_tracks_data
 from download_song import download_tracks
 from mp4_to_mp3 import mp4_to_mp3
 from add_metadata import add_metadata
+
+pathSaveMusic = 'C:\\Users\\andre\\Music\\'
+pathSaveVideos = 'C:\\Users\\andre\\Music\\Videos-music\\'
 
 def main():
     data = get_tracks_data()

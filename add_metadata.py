@@ -1,9 +1,11 @@
 import eyed3
 import os
 import urllib.request as request
+from utils.config import pathSaveMusic
+
 
 def add_metadata(file_name, song, artist, album, track_number, year, cover):
-    mp3 = eyed3.load('C:\\Users\\andre\\Music\\Music'+file_name+'.mp3')
+    mp3 = eyed3.load(pathSaveMusic+file_name+'.mp3')
     if (mp3.tag == None):
         mp3.initTag()
     mp3.tag.title = song
