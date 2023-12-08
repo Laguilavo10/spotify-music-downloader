@@ -1,2 +1,2 @@
-pathSaveMusic = 'C:\\Users\\andre\\Music\\'
+pathSaveMusic = 'C:\\Users\\andre\\OneDrive\\Musica\\'
 pathSaveVideos = 'C:\\Users\\andre\\Music\\Videos-music\\'

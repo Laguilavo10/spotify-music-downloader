@@ -4,9 +4,7 @@ from get_tracks import get_tracks_data
 from download_song import download_tracks
 from mp4_to_mp3 import mp4_to_mp3
 from add_metadata import add_metadata
-
-pathSaveMusic = 'C:\\Users\\andre\\Music\\'
-pathSaveVideos = 'C:\\Users\\andre\\Music\\Videos-music\\'
+from utils.recreate_directory import recreate_directory
 
 def main():
     data = get_tracks_data()
@@ -21,6 +19,7 @@ def main():
         name = download_tracks(f'{song} - {artist}')
         mp4_to_mp3(name)
         add_metadata(file_name=name, song=song, artist=artist, album=album, track_number=f'{track_num}', year=year, cover=cover)
+        recreate_directory()
 
 main()
 
