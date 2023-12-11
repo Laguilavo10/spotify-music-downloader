@@ -1,6 +1,6 @@
 import os
 import shutil
-from config import pathSaveVideos
+# from utils.config import pathSaveVideos
 
 def recreate_directory():
     if os.path.exists('C:\\Users\\andre\\Music\\Videos-music\\'):

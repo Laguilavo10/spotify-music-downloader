@@ -13,6 +13,7 @@ def add_metadata(file_name, song, artist, album, track_number, year, cover):
     mp3.tag.artist = artist
     mp3.tag.recording_date = eyed3.core.Date(year=int(year))
     mp3.tag.track_num = track_number
+    mp3.tag.genre = 'Latin'
     response = request.urlopen(cover)
     imagedata = response.read()
     mp3.tag.images.set(3, imagedata, 'image/png')

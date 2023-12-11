@@ -5,13 +5,15 @@ from download_song import download_tracks
 from mp4_to_mp3 import mp4_to_mp3
 from add_metadata import add_metadata
 from utils.recreate_directory import recreate_directory
+from utils.album_type import album_type
 
 def main():
-    data = get_tracks_data()
-    for item in data['items']:
+    data = get_tracks_data() 
+    songs= list(reversed(data['items']))
+    for item in songs:
         track = item['track']
         song = track['name']
-        album = track['album']['name']
+        album = album_type(type = track['album']['album_type'], name=track['album']['name'])
         artist = list_artists(track['artists'])
         year = get_year_from_date(track['album']['release_date'])
         track_num = track['track_number']
@@ -19,9 +21,9 @@ def main():
         name = download_tracks(f'{song} - {artist}')
         mp4_to_mp3(name)
         add_metadata(file_name=name, song=song, artist=artist, album=album, track_number=f'{track_num}', year=year, cover=cover)
-        recreate_directory()
 
+    recreate_directory()
 main()
 
 #############
-# source env/Scrips/activate
+# source env/Scripts/activate
