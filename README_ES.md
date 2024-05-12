@@ -36,7 +36,9 @@ pip install -r requirements.txt
 
 5. Configura tus credenciales de Spotify:
   - Necesitarás un `SPOTIPY_CLIENT_ID`, `SPOTIPY_CLIENT_SECRET` y `SPOTIPY_REDIRECT_URI`.
-    - Puedes obtener estos creando una aplicación en el [Dashboard de Desarrolladores de Spotify](https://developer.spotify.com/). En "Redirect URI" puedes especificar por ejemplo: "https://developer.spotify.com/".
+    - Puedes obtener estos creando una aplicación en el [Dashboard de Desarrolladores de Spotify](https://developer.spotify.com/).
+      - En "Redirect URI" puedes especificar por ejemplo: "https://developer.spotify.com/".
+      - En "Which API/SDKs are you planning to use?", es suficiente con clickear en "Web API".
     -  Luego, añade tus credenciales a un archivo `.env` en la raíz del proyecto (Revisa el archivo ".env.example").
 
 ```
