@@ -2,33 +2,60 @@
 
 Este proyecto es una herramienta de línea de comandos que permite descargar tus canciones guardadas de Spotify como archivos MP3. Utiliza la API de Spotify para obtener los datos de las canciones y luego descarga las canciones de YouTube. También añade metadatos a los archivos MP3, como el título de la canción, el artista, el álbum, el número de pista y la portada del álbum.
 
+---
+- [English version of this document available here.](./README.md)
+---
+
 ## Cómo usar
 
-1. Clona este repositorio en tu máquina local.
+1. Clona este repositorio en tu máquina local y accede a él:
+```
+git clone https://github.com/Jonatandb/spotify-music-downloader
+cd spotify-music-downloader
+```
 
+2. Crea un entorno de Python para este proyecto:
 ```
-git clone 
+python -m venv venv
 ```
-2. Instala las dependencias del proyecto.
+
+3. Activa el entorno:
+    - Linux:
+    ```
+    source venv/Scripts/activate
+    ```
+    - Windows:
+    ```
+    .\venv\Scripts\activate
+    ```
+
+4. Instala las dependencias del proyecto.
 ```
 pip install -r requirements.txt
 ```
-3. Configura tus credenciales de Spotify. Necesitarás un `SPOTIPY_CLIENT_ID`, `SPOTIPY_CLIENT_SECRET` y `SPOTIPY_REDIRECT_URI`. Puedes obtener estos creando una aplicación en el Dashboard de Desarrolladores de Spotify. Luego, añade tus credenciales a un archivo `.env` en la raíz del proyecto.
+
+5. Configura tus credenciales de Spotify:
+  - Necesitarás un `SPOTIPY_CLIENT_ID`, `SPOTIPY_CLIENT_SECRET` y `SPOTIPY_REDIRECT_URI`.
+    - Puedes obtener estos creando una aplicación en el [Dashboard de Desarrolladores de Spotify](https://developer.spotify.com/). En "Redirect URI" puedes especificar por ejemplo: "https://developer.spotify.com/".
+    -  Luego, añade tus credenciales a un archivo `.env` en la raíz del proyecto (Revisa el archivo ".env.example").
 
 ```
 SPOTIPY_CLIENT_ID=
 SPOTIPY_CLIENT_SECRET=
 SPOTIPY_REDIRECT_URI=
 ```
-4. Configura las rutas de guardado para la música y los vídeos en el archivo `.env`.
+
+6. Configura las rutas de guardado para la música y los vídeos en el archivo `.env`:
 ```
 PATH_SAVE_MUSIC=
-PATH_SAVE_VIDEO_MUSIC=
+PATH_SAVE_VIDEO=
 ```
-5. Ejecuta el script principal.
+
+7. Ejecuta el script principal:
 ```
 py main.py
 ```
+- Se abrirá en el navegador una página web, copiar la URL de esa página y pegarla en la consola. (La primera vez solicitará permiso para que esta app se conecte a la API de Spotify)
 
 El script descargará las canciones guardadas en tu biblioteca de Spotify, las convertirá a MP3 y añadirá los metadatos correspondientes.
 
