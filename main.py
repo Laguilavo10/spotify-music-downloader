@@ -8,7 +8,7 @@ from utils.recreate_directory import recreate_directory
 from utils.album_type import album_type
 
 def main():
-    data = get_tracks_data() 
+    data = get_tracks_data()
     songs= list(reversed(data['items']))
     for item in songs:
         track = item['track']
@@ -18,12 +18,16 @@ def main():
         year = get_year_from_date(track['album']['release_date'])
         track_num = track['track_number']
         cover = track['album']['images'][0]['url']
+        print("\tTrack:")
+        print("\t\t" + "Song: ", song)
+        print("\t\t" + "Album: ", album)
+        print("\t\t" + "Artist: ", artist)
+        print("\t\t" + "Year: ", year)
+        print("\t\t" + "Track number: ", track_num)
+        print("\t\t" + "Cover: ", cover)
         name = download_tracks(f'{song} - {artist}')
         mp4_to_mp3(name)
         add_metadata(file_name=name, song=song, artist=artist, album=album, track_number=f'{track_num}', year=year, cover=cover)
 
     recreate_directory()
 main()
-
-#############
-# source env/Scripts/activate
