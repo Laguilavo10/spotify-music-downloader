@@ -10,7 +10,7 @@ This project is a command-line tool that allows you to download your saved Spoti
 
 1. Clone this repository to your local machine and then go to in it:
 ```
-git clone https://github.com/Jonatandb/spotify-music-downloader
+git clone https://github.com/Laguilavo10/spotify-music-downloader
 cd spotify-music-downloader
 ```
 
