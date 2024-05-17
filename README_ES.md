@@ -10,7 +10,7 @@ Este proyecto es una herramienta de línea de comandos que permite descargar tus
 
 1. Clona este repositorio en tu máquina local y accede a él:
 ```
-git clone https://github.com/Jonatandb/spotify-music-downloader
+git clone https://github.com/Laguilavo10/spotify-music-downloader
 cd spotify-music-downloader
 ```
 
