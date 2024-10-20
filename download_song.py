@@ -1,4 +1,4 @@
-from pytube import YouTube, Search
+from pytubefix import YouTube, Search
 from utils.config import pathSaveVideos
 from utils.sanitize_filename import sanitize_filename
 
@@ -8,5 +8,5 @@ def download_tracks(song):
     url_video = f'http://youtube.com/watch?v={video_id}'
     print("\t\t" + "Link: ", url_video)
     yt = YouTube(url_video)
-    yt.streams.get_lowest_resolution().download(output_path=pathSaveVideos)
+    yt.streams.get_lowest_resolution().download(output_path=pathSaveVideos, filename=f'{sanitize_filename(yt.title)}.mp4' )
     return sanitize_filename(yt.title)
